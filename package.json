@@ -1,0 +1,59 @@
+{
+  "_from": "quickblox-react-native-sdk@^0.5.4-beta",
+  "_id": "quickblox-react-native-sdk@0.5.4-beta",
+  "_inBundle": false,
+  "_integrity": "sha512-h3SH25+O+e+56/A9vLO3YHrMuRPEzsuBjy1fPhyy9a7fyQKNfdlEhOlPfRyD8C6MQ7EvedEbWxOljbticoO8Pw==",
+  "_location": "/quickblox-react-native-sdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "quickblox-react-native-sdk@^0.5.4-beta",
+    "name": "quickblox-react-native-sdk",
+    "escapedName": "quickblox-react-native-sdk",
+    "rawSpec": "^0.5.4-beta",
+    "saveSpec": null,
+    "fetchSpec": "^0.5.4-beta"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/quickblox-react-native-sdk/-/quickblox-react-native-sdk-0.5.4-beta.tgz",
+  "_shasum": "ca55dcc580f5d7599c3e49b16f0b595f94e5bf4c",
+  "_spec": "quickblox-react-native-sdk@^0.5.4-beta",
+  "_where": "/Applications/Projects/Hybrid Projects/React Projects/GitProjects/LocalChacha",
+  "author": {
+    "name": "Injoit LTD",
+    "email": "sales@quickblox.com"
+  },
+  "bugs": {
+    "url": "https://github.com/QuickBlox/quickblox-react-native-sdk/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "QuickBlox SDK for React Native",
+  "homepage": "https://quickblox.com",
+  "keywords": [
+    "quickblox",
+    "react-native",
+    "chat",
+    "messaging",
+    "sdk",
+    "video",
+    "audio",
+    "webrtc",
+    "api",
+    "communication"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "index.js",
+  "name": "quickblox-react-native-sdk",
+  "peerDependencies": {
+    "react-native": ">=0.60.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuickBlox/quickblox-react-native-sdk.git"
+  },
+  "version": "0.5.4-beta"
+}
