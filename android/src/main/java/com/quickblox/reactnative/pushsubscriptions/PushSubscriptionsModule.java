@@ -66,7 +66,7 @@ public class PushSubscriptionsModule extends ReactContextBaseJavaModule {
         QBSubscription qbSubscription = new QBSubscription();
         qbSubscription.setNotificationChannel(QBNotificationChannel.GCM);
         String deviceId = Utils.generateDeviceId(reactContext);
-        qbSubscription.setDeviceUdid(deviceId);
+        qbSubscription.setDeviceUdid("LC"+deviceId);
         qbSubscription.setRegistrationID(deviceToken);
 
         if (!TextUtils.isEmpty(pushChannel)) {
