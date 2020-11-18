@@ -57,7 +57,7 @@ public class PushSubscriptionsModule extends ReactContextBaseJavaModule {
     public void create(ReadableMap data, final Promise promise) {
         String deviceToken = data != null && data.hasKey("deviceToken") ? data.getString("deviceToken") : null;
         String pushChannel = data != null && data.hasKey("pushChannel") ? data.getString("pushChannel") : null;
-
+        String appName = data != null && data.hasKey("appName") ? data.getString("appName") : null;
         if (TextUtils.isEmpty(deviceToken)) {
             promise.reject(new Exception("The registrationId is required parameter"));
             return;
@@ -66,8 +66,14 @@ public class PushSubscriptionsModule extends ReactContextBaseJavaModule {
         QBSubscription qbSubscription = new QBSubscription();
         qbSubscription.setNotificationChannel(QBNotificationChannel.GCM);
         String deviceId = Utils.generateDeviceId(reactContext);
-        qbSubscription.setDeviceUdid("LC"+deviceId);
+        
         qbSubscription.setRegistrationID(deviceToken);
+
+        if (!TextUtils.isEmpty(appName) && appName == "LocalChacha") {
+           qbSubscription.setDeviceUdid("LC"+deviceId); 
+        }else{
+            qbSubscription.setDeviceUdid("LCM"+deviceId);
+        }
 
         if (!TextUtils.isEmpty(pushChannel)) {
             QBNotificationChannel notificationChannel = QBNotificationChannel.valueOf(pushChannel);
