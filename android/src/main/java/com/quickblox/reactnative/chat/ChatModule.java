@@ -191,7 +191,7 @@ public class ChatModule extends ReactContextBaseJavaModule {
         }
         user.setId(userId);
         QBChatService.getInstance().setUseStreamManagement(true);
-        QBChatService.setDefaultPacketReplyTimeout(30000);
+        QBChatService.setDefaultPacketReplyTimeout(10000);
         QBChatService.getInstance().login(user, new QBEntityCallback<Void>() {
             @Override
             public void onSuccess(Void aVoid, Bundle bundle) {

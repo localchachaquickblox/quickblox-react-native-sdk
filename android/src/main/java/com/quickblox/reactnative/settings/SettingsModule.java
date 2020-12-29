@@ -73,7 +73,7 @@ public class SettingsModule extends ReactContextBaseJavaModule {
             QBChatService.setConnectionFabric(new QBTcpChatConnectionFabric(configurationBuilder));
 
             QBChatService.setDebugEnabled(true);
-            QBChatService.setDefaultPacketReplyTimeout(30000);
+            QBChatService.setDefaultPacketReplyTimeout(10000);
 
             promise.resolve(null);
         }
@@ -146,7 +146,7 @@ public class SettingsModule extends ReactContextBaseJavaModule {
         QBChatService.ConfigurationBuilder configurationBuilder = new QBChatService.ConfigurationBuilder();
         configurationBuilder.setReconnectionAllowed(enabled);
         QBChatService.setConfigurationBuilder(configurationBuilder);
-        QBChatService.setDefaultPacketReplyTimeout(30000);
+        QBChatService.setDefaultPacketReplyTimeout(10000);
         promise.resolve(null);
     }
 }
