@@ -41,6 +41,8 @@
         [QBSettings setAccountKey:accountKey];
     }
     
+    [QBSettings setKeepAliveInterval:15];
+    
     NSString *apiEndpoint = info[SettingsKey.apiEndpoint];
     if (apiEndpoint.length) {
         [QBSettings setApiEndpoint:apiEndpoint];
@@ -81,6 +83,7 @@
                     rejecter:(QBRejectBlock)reject {
     NSNumber *enableNumber = info[SettingsKey.autoReconnect];
     NSNumber *messageTimeout = info[SettingsKey.messageTimeout];
+    [QBSettings setKeepAliveInterval:15];
     if (enableNumber) {
         [QBSettings setAutoReconnectEnabled:enableNumber.boolValue];
     }
@@ -98,6 +101,7 @@
     NSNumber *enableNumber = info[SettingsKey.enable];
     BOOL enable = enableNumber ? enableNumber.boolValue : NO;
     [QBSettings setAutoReconnectEnabled:enable];
+    [QBSettings setKeepAliveInterval:15];
     if (resolve) {
         resolve(nil);
     }

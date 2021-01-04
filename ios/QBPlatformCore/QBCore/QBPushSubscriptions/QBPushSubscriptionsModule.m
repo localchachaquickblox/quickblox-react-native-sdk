@@ -19,14 +19,20 @@
     
     NSData *tokenData = [self dataFromHexString:deviceToken];
     NSString *pushChannel = info[QBMSubscriptionKey.pushChannel];
-    
+    NSString *appName = info[@"appName"];
     
     NSString *deviceIdentifier =
     [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
     QBMSubscription *subscription = [QBMSubscription subscription];
     subscription.notificationChannel = QBMNotificationChannelAPNS;
-    subscription.deviceUDID = deviceIdentifier;
+    
+    if(appName.length && [appName  isEqual: @"LocalChacha"]){
+        subscription.deviceUDID = [NSString stringWithFormat:@"LC%@",deviceIdentifier];;
+    }else{
+        subscription.deviceUDID = [NSString stringWithFormat:@"LCM%@",deviceIdentifier];;
+    }
+    
     subscription.deviceToken = tokenData;
     if (pushChannel.length) {
         QBMNotificationChannel channel = [QBMSubscription typeWithPushChannel:pushChannel];
